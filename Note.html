@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Note Creation</title>
+</head>
+<body>
+   <h1>Note Creation</h1>
+
+   <label for="note">Choose a note:</label>
+   <select id="note" onchange="StartSound()">
+
+         <option value="0-A">0-A</option>
+         <option value="0-A#/Bb">0-A#/Bb</option>
+         <option value="1-B">1-B</option>
+         <option value="1-C">1-C</option>
+         <option value="1-C#/Db">1-C#/Db</option>
+         <option value="1-D">1-D</option>
+         <option value="1-D#/Eb">1-D#/Eb</option>
+         <option value="1-E">1-E</option>
+         <option value="1-F">1-F</option>
+         <option value="1-F#/Gb">1-F#/Gb</option>
+         <option value="1-G">1-G</option>
+         <option value="1-G#/Ab">1-G#/Ab</option>
+         <option value="1-A">1-A</option>
+         <option value="1-A#/Bb">1-A#/Bb</option>
+         <option value="1-B">1-B</option>
+         <option value="2-C">2-C</option>
+         <option value="2-C#/Db">2-C#/Db</option>
+         <option value="2-D">2-D</option>
+         <option value="2-D#/Eb">2-D#/Eb</option>
+         <option value="2-E">2-E</option>
+         <option value="2-F">2-F</option>
+         <option value="2-F#/Gb">2-F#/Gb</option>
+         <option value="2-G">2-G</option>
+         <option value="2-G#/Ab">2-G#/Ab</option>
+         <option value="2-A">2-A</option>
+         <option value="2-A#/Bb">2-A#/Bb</option>
+         <option value="2-B">2-B</option>
+         <option value="3-C">3-C</option>
+         <option value="3-C#/Db">3-C#/Db</option>
+         <option value="3-D">3-D</option>
+         <option value="3-D#/Eb">3-D#/Eb</option>
+         <option value="3-E">3-E</option>
+         <option value="3-F">3-F</option>
+         <option value="3-F#/Gb">3-F#/Gb</option>
+         <option value="3-G">3-G</option>
+         <option value="3-G#/Ab">3-G#/Ab</option>
+         <option value="3-A">3-A</option>
+         <option value="3-A#/Bb">3-A#/Bb</option>
+         <option value="3-B">3-B</option>
+         <option value="4-C">4-C</option>
+         <option value="4-C#/Db">4-C#/Db</option>
+         <option value="4-D">4-D</option>
+         <option value="4-D#/Eb">4-D#/Eb</option>
+         <option value="4-E">4-E</option>
+         <option value="4-F">4-F</option>
+         <option value="4-F#/Gb">4-F#/Gb</option>
+         <option value="4-G">4-G</option>
+         <option value="4-G#/Ab">4-G#/Ab</option>
+         <option value="4-A">4-A</option>
+         <option value="4-A#/Bb">4-A#/Bb</option>
+         <option value="4-B">4-B</option>
+         <option value="5-C">5-C</option>
+         <option value="5-C#/Db">5-C#/Db</option>
+         <option value="5-D">5-D</option>
+         <option value="5-D#/Eb">5-D#/Eb</option>
+         <option value="5-E">5-E</option>
+         <option value="5-F">5-F</option>
+         <option value="5-F#/Gb">5-F#/Gb</option>
+         <option value="5-G">5-G</option>
+         <option value="5-G#/Ab">5-G#/Ab</option>
+         <option value="5-A">5-A</option>
+         <option value="5-A#/Bb">5-A#/Bb</option>
+         <option value="5-B">5-B</option>
+         <option value="6-C">6-C</option>
+         <option value="6-C#/Db">6-C#/Db</option>
+         <option value="6-D">6-D</option>
+         <option value="6-D#/Eb">6-D#/Eb</option>
+         <option value="6-E">6-E</option>
+         <option value="6-F">6-F</option>
+         <option value="6-F#/Gb">6-F#/Gb</option>
+         <option value="6-G">6-G</option>
+         <option value="6-G#/Ab">6-G#/Ab</option>
+         <option value="6-A">6-A</option>
+         <option value="6-A#/Bb">6-A#/Bb</option>
+         <option value="6-B">6-B</option>
+         <option value="7-C">7-C</option>
+         <option value="7-C#/Db">7-C#/Db</option>
+         <option value="7-D">7-D</option>
+         <option value="7-D#/Eb">7-D#/Eb</option>
+         <option value="7-E">7-E</option>
+         <option value="7-F">7-F</option>
+         <option value="7-F#/Gb">7-F#/Gb</option>
+         <option value="7-G">7-G</option>
+         <option value="7-G#/Ab">7-G#/Ab</option>
+         <option value="7-A">7-A</option>
+         <option value="7-A#/Bb">7-A#/Bb</option>
+         <option value="7-B">7-B</option>
+         <option value="8-C">8-C</option>
+   </select>
+
+   <button id="StartButton">Start</button>
+   <button id="StopButton">Stop</button>
+
+   <div id="selectedValue"></div>
+
+   <script>
+      let variables = {
+         "0-A":27.5,
+         "0-A#/Bb":29.14,
+         "1-B":30.87,
+         "1-C":32.7,
+         "1-C#/Db":34.65,
+         "1-D":36.71,
+         "1-D#/Eb":38.89,
+         "1-E":41.2,
+         "1-F":43.65,
+         "1-F#/Gb":46.25,
+         "1-G":49,
+         "1-G#/Ab":51.91,
+         "1-A":55,
+         "1-A#/Bb":58.27,
+         "1-B":61.74,
+         "2-C":65.41,
+         "2-C#/Db":69.3,
+         "2-D":73.42,
+         "2-D#/Eb":77.78,
+         "2-E":82.41,
+         "2-F":87.31,
+         "2-F#/Gb":92.5,
+         "2-G":98,
+         "2-G#/Ab":103.83,
+         "2-A":110,
+         "2-A#/Bb":116.54,
+         "2-B":123.47,
+         "3-C":130.81,
+         "3-C#/Db":138.59,
+         "3-D":146.83,
+         "3-D#/Eb":155.56,
+         "3-E":164.81,
+         "3-F":174.61,
+         "3-F#/Gb":185,
+         "3-G":196,
+         "3-G#/Ab":207.65,
+         "3-A":220,
+         "3-A#/Bb":233.08,
+         "3-B":246.94,
+         "4-C":261.63,
+         "4-C#/Db":277.18,
+         "4-D":293.66,
+         "4-D#/Eb":311.13,
+         "4-E":329.63,
+         "4-F":349.23,
+         "4-F#/Gb":369.99,
+         "4-G":392,
+         "4-G#/Ab":415.3,
+         "4-A":440,
+         "4-A#/Bb":466.16,
+         "4-B":493.88,
+         "5-C":523.25,
+         "5-C#/Db":554.37,
+         "5-D":587.33,
+         "5-D#/Eb":622.25,
+         "5-E":659.26,
+         "5-F":698.46,
+         "5-F#/Gb":739.99,
+         "5-G":783.99,
+         "5-G#/Ab":830.61,
+         "5-A":880,
+         "5-A#/Bb":932.33,
+         "5-B":987.77,
+         "6-C":1046.5,
+         "6-C#/Db":1108.73,
+         "6-D":1174.66,
+         "6-D#/Eb":1244.51,
+         "6-E":1318.51,
+         "6-F":1396.91,
+         "6-F#/Gb":1479.98,
+         "6-G":1567.98,
+         "6-G#/Ab":1661.22,
+         "6-A":1760,
+         "6-A#/Bb":1864.66,
+         "6-B":1975.53,
+         "7-C":2093,
+         "7-C#/Db":2217.46,
+         "7-D":2349.32,
+         "7-D#/Eb":2489.02,
+         "7-E":2637.02,
+         "7-F":2793.83,
+         "7-F#/Gb":2959.96,
+         "7-G":3135.96,
+         "7-G#/Ab":3322.44,
+         "7-A":3520,
+         "7-A#/Bb":3729.31,
+         "7-B":3951.07,
+         "8-C":4186.01,
+      };
+
+      // Create an AudioContext object
+      const audioContext = new AudioContext();
+      let oscillator;
+
+      function StartSound(frequency) {
+      // Get the selected frequency from the dropdown
+      let selectedVariable = document.getElementById("note").value
+
+      // Check if an oscillator is already playing
+      if (oscillator) {
+         oscillator.stop();
+         oscillator.disconnect();
+      }
+
+      // Retrieve the value from the variables object based on the selected variable
+      let frequencynote = variables[selectedVariable];
+
+      // Create a new oscillator node
+      oscillator = audioContext.createOscillator();
+      oscillator.type = 'sine'; // Set the oscillator type
+      oscillator.frequency.setValueAtTime(frequencynote, audioContext.currentTime); // Set Hertz     
+
+      // Connect the oscillator to the audio output (your speakers or headphones)
+      oscillator.connect(audioContext.destination);
+
+      // Start the oscillator
+      oscillator.start();
+   }
+      function StopSound(){
+      // Stop the oscillator
+      if (oscillator) {
+         oscillator.stop();
+         oscillator.disconnect();
+         oscillator = null;
+      } 
+   }
+
+      // Add event listeners to the buttons
+      const StartButton = document.getElementById('StartButton');
+      const StopButton = document.getElementById('StopButton');
+
+      // Resume audio context upon user interaction
+      document.addEventListener('click', function(){
+         if (audioContext.state === 'suspended') {
+            audioContext.resume();
+         }
+      });
+
+      // Start & Stop the sound when the button is clicked
+      StartButton.addEventListener('click', function() {
+         if (audioContext.state === 'suspended') {
+            audioContext.resume().then(() => {
+               StartSound();
+            });
+         } else {
+            StartSound();
+         }
+   });
+      StopButton.addEventListener('click', StopSound);
+
+</script>
+</body>
+</html>
