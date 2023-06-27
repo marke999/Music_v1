@@ -598,7 +598,7 @@
 <button id="StopMetronome">Stop</button>
 
 <label for="volume" style="font-size: 15px;">Volume:</label>
-<input type="range" id="volume" min="0" max="4" step="0.1" value="2">
+<input type="range" id="volume" min="0" max="5" step="0.1" value="1">
 
 <script>
    let intervalId;
@@ -628,7 +628,7 @@
             const oscillatorMetronome = audioContextMetronome.createOscillator();
             oscillatorMetronome.connect(gainNode);
 
-            oscillatorMetronome.frequency.value = count % beat === 1 ? 880 : 1760;
+            oscillatorMetronome.frequency.value = count % beat === 1 ? 1500 : 750;
             oscillatorMetronome.start();
             oscillatorMetronome.stop(audioContextMetronome.currentTime + 0.1);
      
